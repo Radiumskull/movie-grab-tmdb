@@ -24,7 +24,7 @@ const MovieCard = (props) => {
                         />
                 </div>
                 <div style={{flex : '2'}}><h4 style={{margin : '0px'}}>Overview</h4><p>{props.overview}</p></div>
-                
+                <div className={styles.tapButton}>Tap Here</div>
 
             </div>
 

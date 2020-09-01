@@ -76,7 +76,7 @@
     padding: 1em;
     font-weight: 600;
     font-size: 1.1em;
-    gap: 2em;
+    gap: 3em;
 }
 
 .tableElem .elemHead{
@@ -94,6 +94,13 @@
     }
     .movieDetails{
         padding : .2em 1em;
+    }
+    .tableElem .elemHead{
+        text-align: left;
+    }
+    
+    .tableElem{
+        gap: 0em;
     }
   }
 
