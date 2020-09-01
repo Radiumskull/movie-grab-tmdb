@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { apiKey } from '../../config/tmdb'
 import styles from './MoviePage.module.css';
 
 const baseSmallURL = "https://image.tmdb.org/t/p/w500"

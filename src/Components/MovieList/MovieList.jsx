@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import MovieCard from '../MovieCards/MovieCard'
 import { store } from '../../config/StateProvider'
 import axios from 'axios'
-import { apiKey, accessKey } from '../../config/tmdb'
 import BottomScrollListener from 'react-bottom-scroll-listener';
   
 const MovieList = () => {

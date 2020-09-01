@@ -2,16 +2,16 @@ import React, { useEffect, useContext } from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 import { store } from './config/StateProvider'
 import axios from 'axios'
-import { apiKey, accessKey } from './config/tmdb'
-
 import MoviePage from './Components/MoviePage/MoviePage.jsx';
 import MovieList from './Components/MovieList/MovieList';
 
 
 function App() {
   const { state, dispatch } = useContext(store)
-  const baseURL = "https://api.themoviedb.org/4/list/1?page=" + state.currPage + "&api_key=" + process.env.REACT_APP_API + "&sort_by=release_date.asc"
+  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
+    const baseURL = "https://api.themoviedb.org/4/list/1?page=" + state.currPage + "&api_key=" + process.env.REACT_APP_API + "&sort_by=release_date.asc"
     dispatch({ type : 'loading', loading : true})
     axios.get(baseURL, { headers : {
       'Authorization' : 'Bearer ' + process.env.REACT_APP_ACCESS
@@ -20,7 +20,7 @@ function App() {
       dispatch({ type : 'fetch', movies : res.data.results })
       dispatch({ type : 'loading', loading : false})
     })
-  }, [])
+  }, [dispatch, state.currPage])
   
   return (
     <div className="App">

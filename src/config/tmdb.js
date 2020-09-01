@@ -1,2 +1,0 @@
-export const apiKey = '017b193d423df1db22cd024d431ee7a8'
-export const accessKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTdiMTkzZDQyM2RmMWRiMjJjZDAyNGQ0MzFlZTdhOCIsInN1YiI6IjVmNGQyMzdhMTQwYmFkMDAzNThiMDA0NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.uoijxJidyR4t6rXEfmItyui0yEPIe-D9T7-coZvv3P8'
