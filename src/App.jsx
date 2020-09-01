@@ -16,7 +16,6 @@ function App() {
     axios.get(baseURL, { headers : {
       'Authorization' : 'Bearer ' + process.env.REACT_APP_ACCESS
     }}).then(res => {
-      console.log(res.data)
       dispatch({ type : 'fetch', movies : res.data.results })
       dispatch({ type : 'loading', loading : false})
     })

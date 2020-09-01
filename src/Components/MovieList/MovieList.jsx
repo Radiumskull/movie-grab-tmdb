@@ -17,9 +17,7 @@ const MovieList = () => {
         return result;
      }
     const loadMoreMovies = () => {
-    console.log(state.currId)
     const baseURL = `https://api.themoviedb.org/4/list/${state.currId}?page=` + state.currPage + "&api_key=" + process.env.REACT_APP_API + "&sort_by=release_date.asc"
-    console.log(baseURL)
     dispatch({ type : 'loading', loading : true})
     axios.get(baseURL, { headers : {
         'Authorization' : 'Bearer ' + process.env.REACT_APP_ACCESS
@@ -42,7 +40,6 @@ const MovieList = () => {
             { state.loading ? <div className="loader"></div> : <></>}
             <BottomScrollListener onBottom={() => {
                 setTimeout(() => {
-                    console.log("NOW")
                     loadMoreMovies();
                 }, 100)
             }} debounce={1500}/>

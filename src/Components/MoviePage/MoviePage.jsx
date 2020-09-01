@@ -10,7 +10,6 @@ const MoviePage = ({ location }) => {
     useEffect(() => {
         axios.get(baseURL).then(res => {
             setMovie(res.data)
-            console.log(res.data)
         })
     }, [setMovie, baseURL])
     return(
