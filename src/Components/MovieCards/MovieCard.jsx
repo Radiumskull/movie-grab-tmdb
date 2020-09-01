@@ -7,7 +7,7 @@ import styles from './MovieCard.module.css'
 const MovieCard = (props) => {
     const baseURL = "https://image.tmdb.org/t/p/w500"
     return(
-        <Link to={props.id.toString()}><div className={styles.movieCard}>
+        <div className={styles.movieCard}>
             <div className={styles.cardImage}>
                 <img src={baseURL + props.image} alt="placeholder"/>
             </div>
@@ -24,12 +24,12 @@ const MovieCard = (props) => {
                         />
                 </div>
                 <div style={{flex : '2'}}><h4 style={{margin : '0px'}}>Overview</h4><p>{props.overview}</p></div>
-                <div className={styles.tapButton}>Tap Here</div>
+                <Link to={props.id.toString()} className={styles.tapButton}><div >Tap Here</div></Link>
 
             </div>
 
         </div>
-        </Link>
+        
     )
 
 }

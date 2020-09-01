@@ -26,7 +26,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <nav className="navbar">
-          <Link to="/"><h1 style={{fontSize : '1.8em', color : 'blue'}}>Movie Grab</h1></Link>
+          <Link to="/"><h1 style={{fontSize : '1.8em', color : '#05B4E3'}}>Movie Grab</h1></Link>
         </nav>
       </header>
       <Switch>

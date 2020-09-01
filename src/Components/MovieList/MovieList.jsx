@@ -33,6 +33,7 @@ const MovieList = () => {
 
     return(
             <div style={{display : 'flex', alignItems : 'center', flexDirection : 'column'}}>
+                <h1 style={{margin : '.5em'}}>Browse Movies</h1>
             {
                 state.movies.map((movie) => {
                     return (<MovieCard key={makeid(10, movie.id)} id={movie.id} title={movie.original_title} image={movie.poster_path} backdrop={movie.backdrop_path} rating={movie.vote_average} overview={movie.overview} release_date={movie.release_date}/>)
