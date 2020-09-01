@@ -1,0 +1,103 @@
+.header{
+    padding : 2em 3em;
+    display: flex;
+    margin: 0 auto;
+    max-width: 1200px;
+    gap: 2em;
+    flex-wrap:  wrap;
+    justify-content: center;
+}
+
+.header img{
+    max-width: 400px;
+    max-height: 600px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.headerBody{
+    min-width: 500px;
+    z-index: 9999;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1em;
+}
+
+
+.movieTitle{
+    font-size: 2.5em;
+}
+.tagline{
+    font-size : 1.6em;
+    font-style: italic;
+    color: #555;
+}
+
+.movieOverview{
+    margin-top: 2em;
+    flex: 1;
+}
+
+.genreList{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.genre{
+    background : rgb(201, 201, 201);
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 29px;
+    padding : 6px 12px;
+    margin-right: 2px;
+    margin-bottom: 4px;
+}
+
+.releaseDate{
+    margin-top: 4em;
+    margin-bottom: 2em;
+    font-size: 1.1em;
+}
+
+.movieDetails{
+    background: white;
+    padding : 2em 3em;
+}
+.movieDetails h1{
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+
+.tableElem{
+    display: flex;
+    padding: 1em;
+    font-weight: 600;
+    font-size: 1.1em;
+    gap: 6em;
+}
+
+.tableElem .elemHead{
+    flex: 1;
+    text-align: right;
+}
+
+.tableElem .elemData{
+    flex: 1;
+}
+
+@media screen and (max-width: 968px) {
+    .header{
+        padding : .2em 1em;
+    }
+    .movieDetails{
+        padding : .2em 1em;
+    }
+  }
+
+@media screen and (max-width: 600px){
+    .headerBody{
+        min-width: 300px;
+    }
+}
