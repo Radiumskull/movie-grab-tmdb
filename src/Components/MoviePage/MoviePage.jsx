@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import styles from './MoviePage.module.css';
-
+import StarRatings from 'react-star-ratings';
 const baseSmallURL = "https://image.tmdb.org/t/p/w500"
 
 const MoviePage = ({ location }) => {
@@ -22,7 +22,21 @@ const MoviePage = ({ location }) => {
                     <h1 className={styles.movieTitle}>{movie.title}</h1>
                     <h1 className={styles.tagline}>{movie.tagline}</h1>
                     <Genres genres={movie.genres}/>
-                    <div className={styles.movieOverview}><h3 style={{margin : '0px'}}>Overview</h3><div>{movie.overview}</div></div>
+                    <div className={styles.movieOverview}>
+                        <h3 style={{margin : '0px'}}>Overview</h3>
+                        <div>{movie.overview}</div>
+                        <div style={{marginTop : '8px'}}>
+                            <StarRatings
+                                rating={movie.vote_average / 2}
+                                starDimension="20px"
+                                starSpacing="2px"
+                                starRatedColor="gold"
+                                numberOfStars={5}
+                                name='rating'
+                            />
+                        </div>
+                    </div>
+
                     <strong className={styles.releaseDate}>Release Date : {movie.release_date}</strong>
             </div>
         </header>
@@ -53,8 +67,9 @@ const DetailsTable = (props) => {
             <TableElem title="Production" value={data.genres} array={true}/>
             <TableElem title="Production Countries" value={data.production_countries} array={true}/>
             <TableElem title="Production Companies" value={data.production_companies} array={true}/>
-            <TableElem title="Budget" value={data.budget + '$'} array={false}/>
-            <TableElem title="Revenue" value={data.revenue + '$'} array={false}/>
+            <TableElem title="Budget" value={'$' + data.budget} array={false}/>
+            <TableElem title="Revenue" value={'$' + data.revenue} array={false}/>
+            <TableElem title="Runtime" value={data.runtime + " mins"} array={false}/>
         </div>
     );
 }

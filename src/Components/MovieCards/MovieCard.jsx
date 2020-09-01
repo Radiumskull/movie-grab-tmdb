@@ -15,7 +15,7 @@ const MovieCard = (props) => {
                 <h3>{props.title}</h3>
                 <div className={styles.rating}>
                     <StarRatings
-                        rating={props.rating % 5}
+                        rating={props.rating / 2}
                         starDimension="20px"
                         starSpacing="2px"
                         starRatedColor="gold"
