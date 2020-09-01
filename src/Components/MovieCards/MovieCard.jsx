@@ -23,7 +23,7 @@ const MovieCard = (props) => {
                         name='rating'
                         />
                 </div>
-                <div style={{flex : '2'}}><h5 style={{margin : '0px'}}>Overview</h5><p>{props.overview}</p></div>
+                <div style={{flex : '2'}}><h4 style={{margin : '0px'}}>Overview</h4><p>{props.overview}</p></div>
                 
 
             </div>

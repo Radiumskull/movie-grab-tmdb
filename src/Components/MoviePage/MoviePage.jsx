@@ -6,11 +6,12 @@ import styles from './MoviePage.module.css';
 const baseSmallURL = "https://image.tmdb.org/t/p/w500"
 
 const MoviePage = ({ location }) => {
-    const baseURL = 'https://api.themoviedb.org/3/movie' + location.pathname + '?api_key=' + apiKey + '&language=en-US';
+    const baseURL = 'https://api.themoviedb.org/3/movie' + location.pathname + '?api_key=' + process.env.REACT_APP_API + '&language=en-US';
     const [ movie, setMovie ] = useState(null);
     useEffect(() => {
         axios.get(baseURL).then(res => {
             setMovie(res.data)
+            console.log(res.data)
         })
     }, [setMovie, baseURL])
     return(
@@ -51,6 +52,7 @@ const DetailsTable = (props) => {
             <TableElem title="Language" value={data.original_language} array={false}/>
             <TableElem title="Adult" value={data.adult ? "Yes" : "No"} array={false}/>
             <TableElem title="Production" value={data.genres} array={true}/>
+            <TableElem title="Production Countries" value={data.production_countries} array={true}/>
             <TableElem title="Production Companies" value={data.production_companies} array={true}/>
             <TableElem title="Budget" value={data.budget + '$'} array={false}/>
             <TableElem title="Revenue" value={data.revenue + '$'} array={false}/>

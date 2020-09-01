@@ -10,11 +10,11 @@ import MovieList from './Components/MovieList/MovieList';
 
 function App() {
   const { state, dispatch } = useContext(store)
-  const baseURL = "https://api.themoviedb.org/4/list/1?page=" + state.currPage + "&api_key=" + apiKey + "&sort_by=release_date.asc"
+  const baseURL = "https://api.themoviedb.org/4/list/1?page=" + state.currPage + "&api_key=" + process.env.REACT_APP_API + "&sort_by=release_date.asc"
   useEffect(() => {
     dispatch({ type : 'loading', loading : true})
     axios.get(baseURL, { headers : {
-      'Authorization' : 'Bearer ' + accessKey
+      'Authorization' : 'Bearer ' + process.env.REACT_APP_ACCESS
     }}).then(res => {
       console.log(res.data)
       dispatch({ type : 'fetch', movies : res.data.results })
@@ -26,7 +26,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <nav className="navbar">
-          <Link to="/"><h1>Movie Grab</h1></Link>
+          <Link to="/"><h1 style={{fontSize : '1.8em', color : 'blue'}}>Movie Grab</h1></Link>
         </nav>
       </header>
       <Switch>

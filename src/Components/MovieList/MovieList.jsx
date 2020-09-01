@@ -19,16 +19,14 @@ const MovieList = () => {
      }
     const loadMoreMovies = () => {
     console.log(state.currId)
-    const baseURL = `https://api.themoviedb.org/4/list/${state.currId}?page=` + state.currPage + "&api_key=" + apiKey + "&sort_by=release_date.asc"
+    const baseURL = `https://api.themoviedb.org/4/list/${state.currId}?page=` + state.currPage + "&api_key=" + process.env.REACT_APP_API + "&sort_by=release_date.asc"
     console.log(baseURL)
     dispatch({ type : 'loading', loading : true})
     axios.get(baseURL, { headers : {
-        'Authorization' : 'Bearer ' + accessKey
+        'Authorization' : 'Bearer ' + process.env.REACT_APP_ACCESS
         }}).then(res => {
-        console.log(state.currId)
         dispatch({ type : 'fetch', movies : res.data.results })
         dispatch({ type : 'loading', loading : false})
-        
         }).catch(e => {
             console.error(e)
         })
