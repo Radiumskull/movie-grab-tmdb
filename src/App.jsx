@@ -20,7 +20,7 @@ function App() {
       dispatch({ type : 'fetch', movies : res.data.results })
       dispatch({ type : 'loading', loading : false})
     })
-  }, [])
+  }, [dispatch, baseURL])
   
   return (
     <div className="App">
