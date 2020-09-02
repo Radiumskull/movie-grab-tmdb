@@ -39,10 +39,10 @@ const MovieList = () => {
             }
             { state.loading ? <div className="loader"></div> : <></>}
             <BottomScrollListener onBottom={() => {
-                setTimeout(() => {
+                if(!state.loading){
                     loadMoreMovies();
-                }, 1500)
-            }} debounce={1500}/>
+                }
+            }} debounce={2000}/>
         </div>
     )
 }

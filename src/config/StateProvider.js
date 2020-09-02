@@ -1,17 +1,5 @@
 import React, {createContext, useReducer} from 'react';
 
-function arrayUnique(array) {
-  var a = array.concat();
-  for(var i=0; i<a.length; ++i) {
-      for(var j=i+1; j<a.length; ++j) {
-          if(a[i] === a[j])
-              a.splice(j--, 1);
-      }
-  }
-
-  return a;
-}
-
 const initialState = {
   currPage : 1,
   currId : 1,
@@ -27,7 +15,7 @@ const StateProvider = ( { children } ) => {
       case 'fetch':
         console.log(Date())
         return {...state, 
-          movies : arrayUnique(state.movies.concat(action.movies)), 
+          movies : state.movies.concat(action.movies), 
           currId : state.currId + 1,
           currPage : 1
 

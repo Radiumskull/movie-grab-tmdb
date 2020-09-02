@@ -10,8 +10,9 @@ function App() {
   const { state, dispatch } = useContext(store)
   
   // eslint-disable-next-line react-hooks/exhaustive-deps
+  const baseURL = "https://api.themoviedb.org/4/list/1?page=" + state.currPage + "&api_key=" + process.env.REACT_APP_API + "&sort_by=release_date.asc"
+
   useEffect(() => {
-    const baseURL = "https://api.themoviedb.org/4/list/1?page=" + state.currPage + "&api_key=" + process.env.REACT_APP_API + "&sort_by=release_date.asc"
     dispatch({ type : 'loading', loading : true})
     axios.get(baseURL, { headers : {
       'Authorization' : 'Bearer ' + process.env.REACT_APP_ACCESS
@@ -19,7 +20,7 @@ function App() {
       dispatch({ type : 'fetch', movies : res.data.results })
       dispatch({ type : 'loading', loading : false})
     })
-  }, [dispatch, state.currPage])
+  }, [])
   
   return (
     <div className="App">
