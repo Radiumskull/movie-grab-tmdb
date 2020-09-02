@@ -41,7 +41,7 @@ const MovieList = () => {
             <BottomScrollListener onBottom={() => {
                 setTimeout(() => {
                     loadMoreMovies();
-                }, 100)
+                }, 1500)
             }} debounce={1500}/>
         </div>
     )
